@@ -39,16 +39,42 @@ export default function Preloader() {
       { duration: 4, ease: "linear", repeat: Infinity }
     );
   };
+  const hasSeenPreloader = sessionStorage.getItem("hasSeenPreloader");
+
   useEffect(() => {
-    animateLoader();
+    // Check if the user has seen the preloader before
+
+    // If the user has not seen the preloader, show it and set the flag in sessionStorage
+    if (!hasSeenPreloader) {
+      animateLoader();
+      sessionStorage.setItem("hasSeenPreloader", true);
+    }
+
+    // Remove the section storage when the page is reloaded
+
+    // Hide the preloader after 2 seconds
     setTimeout(() => {
       setShow(false);
-    }, 4500);
+    }, 2000);
+
+    window.onbeforeunload = function () {
+      if (sessionStorage.getItem("hasSeenPreloader")) {
+        sessionStorage.removeItem("hasSeenPreloader");
+      }
+    };
+
+    return () => {
+      window.onbeforeunload = null;
+    };
   }, []);
 
   return (
     show && (
-      <div className="h-screen w-screen fixed bg-white flex justify-center items-center m-0 p-0 overflow-hidden z-50">
+      <div
+        className={`h-screen w-screen fixed bg-white flex justify-center items-center text-center inset-0 p-0 overflow-hidden  z-50 ${
+          hasSeenPreloader ? "hidden -z-50 " : ""
+        }`}
+      >
         <motion.div
           ref={scope}
           className="relative aspect-[1]"

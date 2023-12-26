@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar/Navbar";
 
 const myFont = localFont({
   src: [
@@ -44,7 +45,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={myFont.className}>{children}</body>
+      <body className={`${myFont.className} bg-[#EEEEEA] mx-8 lg:mx-14`}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
