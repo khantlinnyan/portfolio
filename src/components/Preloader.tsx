@@ -12,6 +12,7 @@ export default function Preloader() {
   const letterSpacing = 12.5;
 
   const [scope, animate] = useAnimate();
+  let hasSeenPreloader: boolean;
 
   const animateLoader = async () => {
     const letterAnimation = [];
@@ -39,7 +40,10 @@ export default function Preloader() {
       { duration: 4, ease: "linear", repeat: Infinity }
     );
   };
-  const hasSeenPreloader = sessionStorage.getItem("hasSeenPreloader");
+
+  if (sessionStorage.getItem("hasSeenPreloader")) {
+    hasSeenPreloader = sessionStorage.getItem("hasSeenPreloader");
+  }
 
   useEffect(() => {
     // Check if the user has seen the preloader before
