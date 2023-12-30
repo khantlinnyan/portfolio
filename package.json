@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@radix-ui/react-hover-card": "^1.0.7",
     "@splinetool/react-spline": "^2.2.6",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.16",
