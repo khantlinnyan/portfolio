@@ -6,6 +6,7 @@ import { LinkedinIcon } from "@/components/Icons/LinkedinIcon";
 import HighlightText from "@/components/Typography/HighlightText";
 import Paragraph from "@/components/Typography/Paragraph";
 import Link from "next/link";
+import AnimatedText from "../Animation/AnimatedText";
 
 export interface IHeroSectionProps {}
 
@@ -13,9 +14,11 @@ export default function HeroSection(props: IHeroSectionProps) {
   return (
     <main className="h-[93svh] pt-20 grid grid-rows-4 grid-cols-1 lg:grid-cols-2 lg:grid-rows-2 w-full container mx-auto">
       <div className="flex-col lg:col-span-2 lg:order-1 justify-center flex">
-        <p className="font-medium lg:text-3xl text-md text-start text-zinc-500 mb-2">
-          - A Journey Through the Mind of
-        </p>
+        <AnimatedText
+          className="font-medium lg:text-3xl text-md text-start text-zinc-500 mb-2"
+          text={["- A Journey Through the Mind of"]}
+          el="p"
+        />
         <h1 className="font-medium text-4xl lg:text-8xl text-zinc-900 w-full">
           Khant Lin Nyan &copy;
         </h1>
