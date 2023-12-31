@@ -5,9 +5,11 @@ import React, { useRef } from "react";
 export default function Paragraph({ paragraph }: any) {
   const containerRef = useRef<HTMLElement>(null!);
   const nextSectionRef = useRef<HTMLElement | null>(null);
+
+  const customOffset = [nextSectionRef, 0.28] as const;
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: [nextSectionRef, 0.28],
+    offset: customOffset,
   });
 
   const words = paragraph.split(" ");
