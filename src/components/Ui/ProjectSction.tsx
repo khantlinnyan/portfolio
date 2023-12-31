@@ -10,7 +10,7 @@ export interface IProjectSectionProps {}
 export default function ProjectSection(props: IProjectSectionProps) {
   return (
     <section className="my-9 lg:my-12 ">
-      <Header>What I've been working on</Header>
+      <Header>What I &apos; ve been working on</Header>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-9 lg:gap-y-12 gap-8">
         <ProjectCard
           alt="Kalasa Logo"

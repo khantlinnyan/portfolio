@@ -20,7 +20,7 @@ export default function HeroSection(props: IHeroSectionProps) {
           el="p"
         />
         <h1 className="font-medium text-4xl lg:text-8xl text-zinc-900 w-full">
-          Khant Lin Nyan &copy;
+          Khant Lin Nyan ©
         </h1>
       </div>
       <div className="w-full lg:justify-start justify-end pb-4 flex-col flex gap-6 h-full order-last lg:order-2 ">
@@ -52,12 +52,12 @@ export default function HeroSection(props: IHeroSectionProps) {
       <div className="w-full row-span-2 ml-auto mr-6 flex justify-center flex-col  lg:order-3 lg:justify-start">
         {" "}
         <Paragraph>
-          I'm a <HighlightText>frontend developer</HighlightText> with a passion
-          for creating <HighlightText>beautiful</HighlightText> and{" "}
+          I &apos; m a <HighlightText>frontend developer</HighlightText> with a
+          passion for creating <HighlightText>beautiful</HighlightText> and{" "}
           <HighlightText>functional</HighlightText> user interfaces. I love
           <HighlightText> minimalism</HighlightText> and{" "}
-          <HighlightText>creative design</HighlightText>, and I'm always excited
-          to take on
+          <HighlightText>creative design</HighlightText>, and I &apos; m always
+          excited to take on
           <HighlightText> new challenges.</HighlightText>
         </Paragraph>
         <div className="flex gap-2 mt-8 items-center">
