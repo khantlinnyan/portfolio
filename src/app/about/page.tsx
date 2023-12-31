@@ -5,7 +5,6 @@ import * as React from "react";
 import ExperienceSection from "@/components/Ui/ExperienceSection";
 import AwardsSection from "@/components/Ui/AwardsSection";
 import AnimatedScroll from "@/components/Animation/AnimatedScroll";
-import PortalGallery from "@/components/Ui/PortalGallery";
 import Link from "next/link";
 
 export interface IpageProps {}
