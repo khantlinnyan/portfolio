@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="mx-8 h-full justify-around flex flex-col  lg:mx-16">
         <div className="grid grid-cols-1 lg:grid-cols-12 mt-10 gap-6">
           <Header className="text-4xl w-full lg:text-6xl col-span-4 text-white font-bold">
-            Let's work <span className="block">together !</span>
+            Let&apos;s work <span className="block">together </span>
           </Header>
           <div className="col-span-4 text-white text-xl border border-white flex flex-col items-center justify-center rounded-3xl gap-4 p-6 w-full ">
             <p>Looking for a Fronted Developer?</p>
@@ -31,7 +31,7 @@ export default function Footer() {
           </div>
         </div>
         <h1 className="font-bold text-base lg:text-lg text-white mt-5 w-full">
-          &copy; 2024 KHANT LIN NYAN
+          © 2024 KHANT LIN NYAN
         </h1>
       </div>
     </footer>
