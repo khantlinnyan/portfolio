@@ -6,6 +6,7 @@ import ExperienceSection from "@/components/Ui/ExperienceSection";
 import AwardsSection from "@/components/Ui/AwardsSection";
 import AnimatedScroll from "@/components/Animation/AnimatedScroll";
 import Link from "next/link";
+import { Metadata } from "next";
 
 export interface IpageProps {}
 
