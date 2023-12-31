@@ -3,10 +3,10 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
 export default function Paragraph({ paragraph }: any) {
-  const containerRef = useRef<HTMLElement | null>(null);
+  const containerRef = useRef<HTMLElement>(null!);
   const nextSectionRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress } = useScroll({
-    target: containerRef.current,
+    target: containerRef,
     offset: [nextSectionRef, 0.28],
   });
 
