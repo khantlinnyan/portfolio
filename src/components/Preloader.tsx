@@ -14,7 +14,7 @@ export default function Preloader() {
   const [scope, animate] = useAnimate();
   let hasSeenPreloader: boolean;
 
-  const animateLoader = async () => {
+  const animateLoader = () => {
     const letterAnimation = [];
     characters.forEach((_, i) => {
       letterAnimation.push([
@@ -30,21 +30,23 @@ export default function Preloader() {
         { duration: 0.3, at: i === 0 ? "+0.8" : "-0.28" },
       ]);
     });
-    animate(letterAnimation, {
-      ease: "linear",
-      repeat: Infinity,
-    });
-    animate(
-      scope.current,
-      { rotate: 360 },
-      { duration: 4, ease: "linear", repeat: Infinity }
-    );
+
+    if (scope.current) {
+      animate(letterAnimation, {
+        ease: "linear",
+        repeat: Infinity,
+      });
+      animate(
+        scope.current,
+        { rotate: 360 },
+        { duration: 4, ease: "linear", repeat: Infinity }
+      );
+    }
   };
 
   if (sessionStorage.getItem("hasSeenPreloader")) {
     hasSeenPreloader = sessionStorage.getItem("hasSeenPreloader");
   }
-
   useEffect(() => {
     if (!hasSeenPreloader) {
       animateLoader();
@@ -63,9 +65,10 @@ export default function Preloader() {
     return () => {
       window.onbeforeunload = null;
     };
-  }, []);
+  }, [animateLoader]);
 
   return (
+    !hasSeenPreloader &&
     show && (
       <div
         className={`h-screen w-screen bg-[#EEEEEA] fixed flex justify-center items-center text-center inset-0 p-0 overflow-hidden  z-50 ${

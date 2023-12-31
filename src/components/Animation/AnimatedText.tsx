@@ -43,8 +43,10 @@ export default function AnimatedText({
 
   useEffect(() => {
     let timeout: NodeJS.Timeout;
+
     const show = () => {
       controls.start("visible");
+
       if (repeatDelay) {
         timeout = setTimeout(async () => {
           await controls.start("hidden");
@@ -53,14 +55,12 @@ export default function AnimatedText({
       }
     };
 
-    if (isInView) {
-      show();
-    } else {
-      controls.start("hidden");
-    }
+    show();
 
-    return () => clearTimeout(timeout);
-  }, [isInView]);
+    return () => {
+      clearTimeout(timeout);
+    };
+  }, [controls, repeatDelay]);
 
   return (
     <Wrapper className={className}>

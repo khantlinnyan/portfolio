@@ -21,8 +21,9 @@ export default function page(props: IpageProps) {
       <div className="overflow-hidden gap-4 h-screen grid grid-cols-1 lg:grid-cols-7">
         <ImageGallery />
         <div className="col-span-1 flex flex-col justify-between h-5/6  lg:col-span-4 lg:my-auto">
-          <p className="font-medium text-4xl lg:text-start md:text-center leading-tight lg:leading-snug md:text-6xl lg:text-7xl  lg:my-auto gap-4 text-zinc-800 w-full">
-            Hey 👋, <span className="block lg:-mt-4">I'm Khant Lin Nyan</span>
+          <p className="font-medium text-4xl lg:text-start md:text-center leading-tight lg:leading-snug md:text-6xl lg:text-7xl  lg:my-auto gap-3 my-auto text-zinc-800 w-full">
+            Hey 👋,{" "}
+            <span className="block lg:-mt-4">I&apos;m Khant Lin Nyan</span>
             <Link
               href={"/id-card"}
               className="px-6 py-3 hidden lg:inline text-lg bg-zinc-800 rounded-lg  text-red-500/90 font-medium"
