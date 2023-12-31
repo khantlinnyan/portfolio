@@ -11,6 +11,7 @@ import SkillIconsTypescript from "../Icons/SkillIcons/SkillIconsTypescript";
 import SkillIconsSupabaseDark from "../Icons/SkillIcons/SkillIconsSupabaseDark";
 import SkillIconsGithubDark from "../Icons/SkillIcons/SkillIconsGithubDark";
 import Header from "../Typography/Header";
+import SectionLayout from "../Layout/SectionLayout";
 
 export interface ISkillsSectionProps {}
 
@@ -25,7 +26,7 @@ const skills = [
   },
   {
     icon: <SkillIconsTailwindcssDark />,
-    name: "Tailwindcss",
+    name: "Tailwind",
   },
   {
     icon: <SkillIconsHtml />,
@@ -62,13 +63,13 @@ export default function SkillsSection(props: ISkillsSectionProps) {
   const nextSectionRef = React.useRef<HTMLDivElement>(null);
 
   return (
-    <section ref={nextSectionRef} className="max-w-3xl mx-auto">
+    <SectionLayout ref={nextSectionRef}>
       <Header>Skills</Header>
-      <div className="lg:grid-cols-4 grid-cols-2 grid gap-4 lg:gap-6 w-full">
+      <div className=" grid-cols-4 grid gap-4 lg:gap-6 w-full">
         {skills.map((skill) => (
           <div
             key={skill.name}
-            className="relative p-4 lg:p-6 w-full h-full"
+            className="relative p-1 lg:p-6 w-full h-full"
             onMouseEnter={() => setIsHovered(skill)}
             onMouseLeave={() => setIsHovered(null)}
           >
@@ -76,13 +77,13 @@ export default function SkillsSection(props: ISkillsSectionProps) {
               className: "w-full hover:opacity-15 h-full",
             })}
             {isHovered === skill && (
-              <div className="absolute -z-10 top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-base  text-zinc-800 font-bold uppercase">
+              <div className="absolute -z-10 top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-[10px] lg:text-base  text-zinc-800 font-bold uppercase">
                 {skill.name}
               </div>
             )}
           </div>
         ))}
       </div>
-    </section>
+    </SectionLayout>
   );
 }

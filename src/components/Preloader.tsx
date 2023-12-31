@@ -46,17 +46,10 @@ export default function Preloader() {
   }
 
   useEffect(() => {
-    // Check if the user has seen the preloader before
-
-    // If the user has not seen the preloader, show it and set the flag in sessionStorage
     if (!hasSeenPreloader) {
       animateLoader();
       sessionStorage.setItem("hasSeenPreloader", true);
     }
-
-    // Remove the section storage when the page is reloaded
-
-    // Hide the preloader after 2 seconds
     setTimeout(() => {
       setShow(false);
     }, 2000);
@@ -75,7 +68,7 @@ export default function Preloader() {
   return (
     show && (
       <div
-        className={`h-screen w-screen fixed bg-white flex justify-center items-center text-center inset-0 p-0 overflow-hidden  z-50 ${
+        className={`h-screen w-screen bg-[#EEEEEA] fixed flex justify-center items-center text-center inset-0 p-0 overflow-hidden  z-50 ${
           hasSeenPreloader ? "hidden -z-50 " : ""
         }`}
       >

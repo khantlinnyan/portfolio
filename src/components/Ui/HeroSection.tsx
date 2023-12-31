@@ -27,13 +27,24 @@ export default function HeroSection(props: IHeroSectionProps) {
         <Paragraph className="lg:text-lg text-base">Get in touch</Paragraph>
         <div className="flex flex-row lg:flex-col gap-6 ">
           {" "}
-          <Link className="text-2xl text-zinc-800 lg:text-3xl" href={"/"}>
+          <Link
+            className="text-2xl text-zinc-800 lg:text-3xl"
+            href={
+              "https://www.linkedin.com/in/khant-lin-nyan-233325287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            }
+          >
             <LinkedinIcon />
           </Link>
-          <Link className="text-2xl text-zinc-800 lg:text-3xl" href={"/"}>
+          <Link
+            className="text-2xl text-zinc-800 lg:text-3xl"
+            href={"https://www.facebook.com/khant.l.nyan.7"}
+          >
             <FacebookIcon />
           </Link>
-          <Link className="text-2xl text-zinc-800 lg:text-3xl" href={"/"}>
+          <Link
+            className="text-2xl text-zinc-800 lg:text-3xl"
+            href={"mailto:khantlinnyan.dev@gmail.com"}
+          >
             <GmailIcon />
           </Link>
         </div>

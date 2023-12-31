@@ -2,25 +2,11 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { useRouter } from "next/navigation";
+import { useActiveTab } from "../Context/ActiveTabContextProvider";
+import { navLink } from "../Context/ActiveTabContextProvider";
 
-const navLink = [
-  {
-    name: "Home",
-    to: "/",
-  },
-  {
-    name: "About",
-    to: "/about",
-  },
-  {
-    name: "Contact",
-    to: "/contact",
-  },
-];
 export default function Navbar() {
-  const route = useRouter();
-  const [activeTab, setActiveTab] = useState(navLink[0].name);
+  const { activeTab, setActiveTab } = useActiveTab();
 
   return (
     <motion.nav

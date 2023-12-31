@@ -1,17 +1,14 @@
 "use client";
 import React, { useState } from "react";
-//Gallery
 import Image1 from "@/../public/projectImage/_DSC7547 (1).jpg";
 import Image2 from "@/../public/projectImage/IMG_20231227_201805.jpg";
 import Image3 from "@/../public/projectImage/IMG_20231227_201718.jpg";
-
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { wrap } from "popmotion";
 import { cn } from "@/lib/utils";
 
 export default function ImageGallery() {
-  // Using an array to keep track of two states
   const [[imageCount, direction], setImageCount] = useState([0, 0]);
   const activeImageIndex = wrap(0, ImageGalleryPhotos.length, imageCount);
 
@@ -33,7 +30,7 @@ export default function ImageGallery() {
     <>
       <AnimatePresence initial={false} custom={direction}>
         <div
-          className="animate-in flex px-5 col-span-3 flex-col items-center gap-8 justify-center"
+          className="animate-in image-gallery flex px-5 col-span-3 flex-col items-center gap-8 justify-center"
           style={{ "--index": 1 }}
         >
           <div className="flex relative justify-center  w-full items-center">

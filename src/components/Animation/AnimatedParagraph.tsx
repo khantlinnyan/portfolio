@@ -7,7 +7,7 @@ export default function Paragraph({ paragraph }) {
   const nextSectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef.current,
-    offset: [nextSectionRef, 0.5],
+    offset: [nextSectionRef, 0.28],
   });
 
   const words = paragraph.split(" ");

@@ -5,33 +5,36 @@ import { ArrowIcon } from "../Icons/ArrowIcon";
 
 export interface IProjectCardProps {
   imageSrc: string;
-  href: string;
+  alt: string;
   description: string;
   title: string;
 }
 
 export default function ProjectCard({
   imageSrc,
-  href,
+  alt,
   description,
   title,
 }: IProjectCardProps) {
   return (
-    <Link href={href} className="w-full h-auto flex flex-col">
+    <div className="w-full h-auto flex flex-col">
       <Image
+        alt={alt}
         src={imageSrc}
         layout="responsive"
-        width="400"
-        height="400" // 1:1 aspect ratio
-        className="w-full object-contain  aspect-square bg-white/40  rounded-3xl"
+        width="300"
+        height="300"
+        className="w-full object-contain  aspect-square bg-white/40  rounded-3xl p-3"
       />
-      <p className="mt-4 text-zinc-800 text-sm lg:base">{description}</p>
+      <div className="mt-4 bg-green-400/40 text-zinc-800 text-sm lg:base w-fit px-2 py-1 rounded-full">
+        {description}
+      </div>
       <div className="flex items-center mt-2 gap-x-2">
         <p className=" text-zinc-900 text-xl lg:text-2xl font-medium">
           {title}
         </p>
         <ArrowIcon className="text-3xl rotate-180" />
       </div>
-    </Link>
+    </div>
   );
 }
