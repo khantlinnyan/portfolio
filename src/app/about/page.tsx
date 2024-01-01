@@ -11,7 +11,7 @@ import { Metadata } from "next";
 export interface IpageProps {}
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About | Khant Lin Nyan",
   description: "More Detail about Khant Lin Nyan",
 };
 

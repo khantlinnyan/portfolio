@@ -11,7 +11,7 @@ export default function Footer() {
             Let&apos;s work <span className="block">together </span>
           </Header>
           <div className="col-span-4 text-white text-xl border border-white flex flex-col items-center justify-center rounded-3xl gap-4 p-6 w-full ">
-            <p>Looking for a Fronted Developer?</p>
+            <p>Looking for a Frontend Developer?</p>
             <Link
               className="bg-white rounded-xl text-zinc-900 text-center w-full py-3"
               href={"mailto:khantlinnyan.dev@gmail.com"}

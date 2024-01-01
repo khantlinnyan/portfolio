@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Ui/Footer";
@@ -38,9 +39,22 @@ const myFont = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "HOME",
+  title: "Khant Lin Nyan",
   description:
-    "I'm a frontend developer with a passion for creating beautiful and functional user interfaces. I love minimalism and creative design, and I'm always excited to take on new challenges.",
+    "Khant Lin Nyan as a frontend developer with a passion for creating beautiful and functional user interfaces. ",
+  openGraph: {
+    type: "website",
+    url: "https://khantlinnyan.vercel.app/",
+    description:
+      "I'm a frontend developer with a passion for creating beautiful and functional user interfaces.",
+    siteName: "Khant Lin Nyan",
+  },
+  twitter: {
+    site: "https://khantlinnyan.vercel.app",
+    title: "Khant Lin Nyan",
+    description:
+      "I'm a frontend developer with a passion for creating beautiful and functional user interfaces.",
+  },
 };
 
 export default function RootLayout({
@@ -52,6 +66,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`bg-[#EEEEEA] ${myFont.className} `}>
         <Analytics />
+        <SpeedInsights />
         <ActiveTabProvider>
           <ScrollProvider>
             <Navbar />
