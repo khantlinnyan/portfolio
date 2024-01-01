@@ -29,10 +29,7 @@ export default function ImageGallery() {
   return (
     <>
       <AnimatePresence initial={false} custom={direction}>
-        <div
-          className="animate-in image-gallery flex px-5 col-span-3 flex-col items-center gap-8 justify-center"
-          style={{ "--index": 1 }}
-        >
+        <div className="animate-in  flex px-5 col-span-3 flex-col items-center gap-8 justify-center">
           <div className="flex relative justify-center  w-full items-center">
             <motion.div
               key={imageCount}

@@ -35,7 +35,7 @@ export default function page(props: IpageProps) {
             <AnimatedScroll />
             <Link
               href={"/id-card"}
-              className="px-6 w-full text-center py-3 h-fit inline-block lg:hidden text-base  bg-zinc-800 rounded-lg  text-red-500/90 font-medium"
+              className="px-6 w-full text-center py-3 h-fit inline-block lg:hidden text-base  bg-zinc-700 rounded-lg text-white font-medium"
             >
               Visual Identity
             </Link>

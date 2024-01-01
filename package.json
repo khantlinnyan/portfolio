@@ -19,11 +19,12 @@
     "react": "^18",
     "react-dom": "^18",
     "react-swipeable": "^7.0.1",
-    "tailwind-merge": "^2.2.0"
+    "tailwind-merge": "^2.2.0",
+    "universal-cookie": "^7.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
-    "@types/react": "^18",
+    "@types/react": "^18.2.45",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",

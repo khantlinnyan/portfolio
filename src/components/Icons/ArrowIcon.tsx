@@ -1,3 +1,4 @@
+import { SVGProps } from "react";
 export function ArrowIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg

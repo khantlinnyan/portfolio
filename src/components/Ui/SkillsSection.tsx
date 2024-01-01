@@ -12,6 +12,8 @@ import SkillIconsSupabaseDark from "../Icons/SkillIcons/SkillIconsSupabaseDark";
 import SkillIconsGithubDark from "../Icons/SkillIcons/SkillIconsGithubDark";
 import Header from "../Typography/Header";
 import SectionLayout from "../Layout/SectionLayout";
+import { useScrollContext } from "../Context/ScrollContextProvider";
+import { useState } from "react";
 
 export interface ISkillsSectionProps {}
 
@@ -59,8 +61,8 @@ const skills = [
 ];
 
 export default function SkillsSection(props: ISkillsSectionProps) {
-  const [isHovered, setIsHovered] = React.useState(null);
-  const nextSectionRef = React.useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState(null);
+  const { nextSectionRef } = useScrollContext();
 
   return (
     <SectionLayout ref={nextSectionRef}>

@@ -4,6 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Ui/Footer";
 import ActiveTabProvider from "@/components/Context/ActiveTabContextProvider";
 import Navbar from "@/components/Navbar/Navbar";
+import { ScrollProvider } from "@/components/Context/ScrollContextProvider";
 
 const myFont = localFont({
   src: [
@@ -50,12 +51,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={`bg-[#EEEEEA] ${myFont.className} `}>
         <ActiveTabProvider>
-          <Navbar />
-          <main className={`${myFont.className} mx-8 lg:mx-14`}>
-            {children}
-          </main>
+          <ScrollProvider>
+            <Navbar />
+            <main className={`${myFont.className} mx-8 lg:mx-14`}>
+              {children}
+            </main>
 
-          <Footer />
+            <Footer />
+          </ScrollProvider>
         </ActiveTabProvider>
       </body>
     </html>

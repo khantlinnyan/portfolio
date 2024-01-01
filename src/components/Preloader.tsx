@@ -1,8 +1,9 @@
 "use client";
 import { motion, useAnimate } from "framer-motion";
 import { useEffect, useState } from "react";
+import Cookies from "universal-cookie";
 
-export default function Preloader() {
+const Preloader: React.FC = () => {
   const text = "KHANT LIN NYAN'S PORTFOLIO";
   const characters = text.split("");
   const [show, setShow] = useState(true);
@@ -12,7 +13,8 @@ export default function Preloader() {
   const letterSpacing = 12.5;
 
   const [scope, animate] = useAnimate();
-  let hasSeenPreloader: boolean;
+
+  const cookies = new Cookies();
 
   const animateLoader = () => {
     const letterAnimation = [];
@@ -33,7 +35,6 @@ export default function Preloader() {
 
     if (scope.current) {
       animate(letterAnimation, {
-        ease: "linear",
         repeat: Infinity,
       });
       animate(
@@ -44,35 +45,35 @@ export default function Preloader() {
     }
   };
 
-  if (sessionStorage.getItem("hasSeenPreloader")) {
-    hasSeenPreloader = sessionStorage.getItem("hasSeenPreloader");
-  }
   useEffect(() => {
+    const hasSeenPreloader = cookies.get("hasSeenPreloader");
+
     if (!hasSeenPreloader) {
       animateLoader();
-      sessionStorage.setItem("hasSeenPreloader", true);
+      cookies.set("hasSeenPreloader", "true", { path: "/" });
     }
+
     setTimeout(() => {
       setShow(false);
     }, 2000);
 
     window.onbeforeunload = function () {
-      if (sessionStorage.getItem("hasSeenPreloader")) {
-        sessionStorage.removeItem("hasSeenPreloader");
+      if (cookies.get("hasSeenPreloader")) {
+        cookies.remove("hasSeenPreloader", { path: "/" });
       }
     };
+    animateLoader();
 
     return () => {
       window.onbeforeunload = null;
     };
-  }, [animateLoader]);
+  }, [cookies]);
 
   return (
-    !hasSeenPreloader &&
     show && (
       <div
         className={`h-screen w-screen bg-[#EEEEEA] fixed flex justify-center items-center text-center inset-0 p-0 overflow-hidden  z-50 ${
-          hasSeenPreloader ? "hidden -z-50 " : ""
+          cookies.get("hasSeenPreloader") ? "hidden -z-50 " : ""
         }`}
       >
         <motion.div
@@ -100,4 +101,6 @@ export default function Preloader() {
       </div>
     )
   );
-}
+};
+
+export default Preloader;

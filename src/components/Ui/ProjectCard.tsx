@@ -1,10 +1,10 @@
 import * as React from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { ArrowIcon } from "../Icons/ArrowIcon";
 
 export interface IProjectCardProps {
-  imageSrc: string;
+  imageSrc: StaticImageData;
   alt: string;
   description: string;
   title: string;

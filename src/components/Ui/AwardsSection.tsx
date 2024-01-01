@@ -2,7 +2,6 @@ import * as React from "react";
 import SectionLayout from "../Layout/SectionLayout";
 import Header from "../Typography/Header";
 import RiAwardFill from "../Icons/RiAwardFill";
-
 export interface IAward {
   name: string;
   time: string;

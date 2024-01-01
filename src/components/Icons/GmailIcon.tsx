@@ -1,3 +1,4 @@
+import { SVGProps } from "react";
 export function GmailIcon(props: SVGProps<SVGSVGElement>) {
   return (
     <svg

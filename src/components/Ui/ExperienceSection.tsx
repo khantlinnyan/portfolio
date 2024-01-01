@@ -11,6 +11,7 @@ export interface IExperienceProps {}
 export default function ExperienceSection(props: IExperienceProps) {
   const Experience = [
     {
+      id: 1,
       orgName: "VirDig",
       position: "Frontend Developer",
       src: VirDigLogo,
@@ -18,6 +19,7 @@ export default function ExperienceSection(props: IExperienceProps) {
       time: "Dec 2023 - Present",
     },
     {
+      id: 2,
       orgName: "TeeHtwin",
       position: "Frontend Developer",
       src: TeeHtwinLogo,
@@ -30,14 +32,14 @@ export default function ExperienceSection(props: IExperienceProps) {
       <Header>Experience</Header>
       <div className="flex flex-col gap-8 lg:gap-10 items-center justify-center">
         {Experience.map((exp) => (
-          <div key={exp.title} className=" grid grid-cols-4 items-center">
+          <div key={exp.id} className=" grid grid-cols-4 items-center">
             <div className="flex col-span-3 items-start">
               <Image
                 className="h-auto w-2/12 aspect-square rounded-xl 
                 bg-white p-1
                 object-contain lg:rounded-3xl mr-4 lg:mr-10"
                 src={exp.src}
-                alt={exp.src}
+                alt={exp.alt}
               />
 
               <div className="flex col-span-1 flex-col gap-1 lg:gap-2 w-fit">
