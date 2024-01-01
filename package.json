@@ -12,6 +12,7 @@
     "@radix-ui/react-hover-card": "^1.0.7",
     "@splinetool/react-spline": "^2.2.6",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.2",
     "clsx": "^2.0.0",
     "framer-motion": "^10.16.16",
     "lottie-react": "^2.4.0",
