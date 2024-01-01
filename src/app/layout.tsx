@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/react";
 import localFont from "next/font/local";
 import "./globals.css";
 import Footer from "@/components/Ui/Footer";
@@ -50,6 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-[#EEEEEA] ${myFont.className} `}>
+        <Analytics />
         <ActiveTabProvider>
           <ScrollProvider>
             <Navbar />
