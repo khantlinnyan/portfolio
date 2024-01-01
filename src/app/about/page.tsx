@@ -7,6 +7,7 @@ import AwardsSection from "@/components/Ui/AwardsSection";
 import AnimatedScroll from "@/components/Animation/AnimatedScroll";
 import Link from "next/link";
 import { Metadata } from "next";
+import { ArrowIcon } from "@/components/Icons/ArrowIcon";
 
 export interface IpageProps {}
 
@@ -19,7 +20,16 @@ export default function page(props: IpageProps) {
   return (
     <>
       <div className="overflow-hidden gap-4 h-screen grid grid-cols-1 lg:grid-cols-7">
-        <ImageGallery />
+        <div className="col-span-3 flex items-start lg:items-center flex-col justify-center gap-10">
+          <ImageGallery />
+          <div className="flex items-center">
+            <p className="text-zinc-800 text-base lg:text-lg  mx-3 lg:mr-3">
+              Swipe
+            </p>
+            <ArrowIcon />
+          </div>
+        </div>
+
         <div className="col-span-1 flex flex-col justify-between h-5/6  lg:col-span-4 lg:my-auto">
           <p className="font-medium text-4xl lg:text-start md:text-center leading-tight lg:leading-snug md:text-6xl lg:text-7xl  lg:my-auto gap-3 my-auto text-zinc-800 w-full">
             Hey 👋,{" "}
